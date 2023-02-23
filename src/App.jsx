@@ -8,19 +8,18 @@ function App() {
     setLoading(true);
     const API_KEY = "1mwpV1pXzxX9PWodaVTxBGCXpAsda5up";
     fetch(
-      `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${search}&limit=25&offset=0&rating=g&lang=en`
+      `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${search}&limit=50&offset=0&rating=g&lang=en`
     )
       .then((response) => response.json())
-      .then((data) =>{ setGifs(data.data) 
-      console.log(data)})
-      .then(()=>{
-        setLoading(false)
-  });
-  console.log(gifs
-    );
+      .then((data) => {
+        setGifs(data.data);
+      })
+      .then(() => {
+        setLoading(false);
+      });
   }
   return (
-    <div className=" max-w-2xl mx-auto m-4">
+    <div className=" max-w-2xl mx-auto m-4 flex flex-col justify-center">
       <h1 className="text-red-500 text-4xl text-center font-bold ">
         GIF NOT JIF
       </h1>
@@ -35,17 +34,13 @@ function App() {
         />
       </form>
       {loading ? (
-        <p
-          className="text-xl text-white text-center"
-        >
-          Loading...
-        </p>
+        <p className="text-xl text-white text-center">Loading...</p>
       ) : (
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-3 grid-flow-dense">
           {gifs.map((gif) => {
             return (
-              <div key={gif.id} className="m-2">
-                <img src={gif.images.downsized.url} loading="lazy" alt="gif" />
+              <div key={gif.id} className="m-2 mx-auto">
+                <img className="w-40 h-40" src={gif.images.preview_gif.url} loading="lazy" alt="gif" />
               </div>
             );
           })}

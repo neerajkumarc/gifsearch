@@ -5,7 +5,6 @@ import fileDownload from "js-file-download";
 
 const Gif = () => {
   const { id } = useParams();
-  console.log(id);
   const [gif, setGif] = useState([]);
   const [loading, setLoading] = useState(true);
   const API_KEY = "1mwpV1pXzxX9PWodaVTxBGCXpAsda5up";
@@ -14,7 +13,6 @@ const Gif = () => {
     fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=${API_KEY}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.data);
         setGif(data.data);
         setLoading(false);
       });

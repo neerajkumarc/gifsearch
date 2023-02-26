@@ -4,3 +4,6 @@
 body{
     background-color: black;
 }
+*{
+    outline:2px solid red;
+}

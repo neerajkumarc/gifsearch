@@ -2,8 +2,8 @@ import React from 'react'
 
 const PageNotFound = () => {
   return (
-    <div className='text-white flex items-center justify-center min-h-screen'>
-      <p>404 | PAGE NOT FOUND</p>
+    <div className='text-white flex flex-col items-center justify-center min-h-screen'>
+    <p className='text-2xl animate-pulse text-orange-300 text-bold'> 404 | PAGE NOT FOUND</p>
     </div>
   )
 }

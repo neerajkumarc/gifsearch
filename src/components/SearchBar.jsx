@@ -6,7 +6,6 @@ const SearchBar = () => {
     const navigate = useNavigate()
     const fetchGifs = (e)=>{
         e.preventDefault()
-        console.log(search);
         navigate(`/search/${search}`)
     }
   return (

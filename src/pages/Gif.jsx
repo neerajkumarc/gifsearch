@@ -20,7 +20,6 @@ const Gif = () => {
         setGif(data.data);
         setLoading(false);
         setStatus(data.meta.status);
-        console.log(data.data);
       })
   }, []);
   const handleDownload = (url, filename) => {

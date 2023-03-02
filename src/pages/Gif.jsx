@@ -19,6 +19,7 @@ const Gif = () => {
         setGif(data.data);
         setLoading(false);
         setStatus(data.meta.status);
+        console.log(data.data);
       })
   }, []);
   const handleDownload = (url, filename) => {
@@ -40,6 +41,7 @@ const Gif = () => {
             <p className="text-center text-2xl text-white">Loading...</p>
           ) : (
             <div className="max-w-2xl mx-auto m-4 text-white flex flex-col items-center gap-4">
+              <p className="text-bold text-2xl text-center">{gif.title}</p>
               <img
                 className="rounded-md w-96"
                 src={gif.images.original.url}

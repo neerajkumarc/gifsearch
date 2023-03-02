@@ -8,6 +8,7 @@ const Gif = () => {
   const { id } = useParams();
   const [gif, setGif] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [status, setStatus] = useState()
   const [notFound, setNotFound] = useState(false);
   const API_KEY = "1mwpV1pXzxX9PWodaVTxBGCXpAsda5up";
 
@@ -17,7 +18,8 @@ const Gif = () => {
       .then((data) => {
         setGif(data.data);
         setLoading(false);
-      });
+        setStatus(data.meta.status);
+      })
   }, []);
   const handleDownload = (url, filename) => {
     axios
@@ -30,7 +32,7 @@ const Gif = () => {
   };
   return (
     <div>
-      {gif.length == 0 ? (
+      {status == 404 ? (
         <PageNotFound />
       ) : (
         <div>

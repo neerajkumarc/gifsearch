@@ -14,14 +14,14 @@ const SearchBar = () => {
     <h1 className="text-red-500 text-4xl text-center font-bold ">
       GIF NOT JIF
     </h1>
-    <form onSubmit={fetchGifs}>
+    <form onSubmit={fetchGifs} className="text-center">
       <input
         type="text"
         placeholder="Search gifs.."
         onChange={(e) => {
           setSearch(e.target.value);
         }}
-        className="rounded p-4 m-4 w-full text-black"
+        className="rounded p-4 m-4 w-[80%] text-black"
       />
     </form>
     </div>

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
+import PageNotFound from "./PageNotFound"
 
 const Home = () => {
   const { searchText } = useParams();
@@ -35,7 +36,7 @@ const Home = () => {
   return (
     <div>
       <SearchBar/>
-      {loading ? (
+    {gifs.length == 0?<PageNotFound/>:<div> {loading ? (
         <p className="text-xl text-center">Loading...</p>
       ) : (
         <div className="grid grid-cols-3 grid-flow-dense">
@@ -56,7 +57,7 @@ const Home = () => {
             );
           })}
         </div>
-      )}
+      )}</div>}
     </div>
   );
 };

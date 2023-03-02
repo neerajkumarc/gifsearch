@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import fileDownload from "js-file-download";
 import PageNotFound from "./PageNotFound";
 
 const Gif = () => {
   const { id } = useParams();
+  const navigate = useNavigate()
   const [gif, setGif] = useState([]);
   const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState()
@@ -59,10 +60,17 @@ const Gif = () => {
                 >
                   Download
                 </button>
+                <button
+                  className="bg-red-500 px-4 p-2 w-36 font-bold rounded"
+                  onClick={() => {
+                   navigate(-1)
+                  }}
+                >
+                  Go Back
+                </button>
               </div>
             </div>
           )}
-          F
         </div>
       )}
     </div>

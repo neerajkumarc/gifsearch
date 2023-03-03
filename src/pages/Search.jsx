@@ -39,7 +39,7 @@ const Home = () => {
     {gifs.length == 0?<PageNotFound/>:<div> {loading ? (
         <p className="text-xl text-center">Loading...</p>
       ) : (
-        <div className="grid grid-cols-3 grid-flow-dense max-w-2xl mx-auto p-4">
+        <div className="grid grid-cols-3 grid-flow-dense max-w-xl mx-auto p-4">
           {gifs.map((gif) => {
             return (
               <div
@@ -48,7 +48,7 @@ const Home = () => {
                 onClick={() => handleClick(gif.id)}
               >
                 <img
-                  className="w-40 h-40 cursor-pointer"
+                  className="w-40 p-1 h-40 cursor-pointer"
                   src={gif.images.preview_gif.url}
                   loading="lazy"
                   alt="gif"

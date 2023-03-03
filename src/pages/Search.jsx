@@ -39,7 +39,7 @@ const Home = () => {
     {gifs.length == 0?<PageNotFound/>:<div> {loading ? (
         <p className="text-xl text-center">Loading...</p>
       ) : (
-        <div className="grid grid-cols-3 grid-flow-dense">
+        <div className="grid grid-cols-3 grid-flow-dense max-w-2xl mx-auto p-4">
           {gifs.map((gif) => {
             return (
               <div

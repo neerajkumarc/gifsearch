@@ -44,7 +44,7 @@ const Home = () => {
             return (
               <div
                 key={gif.id}
-                className="m-2 mx-auto"
+                className="m-2 mx-auto hover:scale-110 transition-all duration-300"
                 onClick={() => handleClick(gif.id)}
               >
                 <img

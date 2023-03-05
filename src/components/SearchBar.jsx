@@ -10,9 +10,7 @@ const SearchBar = () => {
     }
   return (
     <div className=" max-w-2xl mx-auto m-4 flex flex-col justify-center">
-    <h1 className="text-red-500 text-4xl text-center font-bold">
-      GIF NOT JIF
-    </h1>
+   
     <form onSubmit={fetchGifs} className="text-center">
       <input
         type="text"

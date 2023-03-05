@@ -1,13 +1,13 @@
-import React from 'react'
-import { Form } from 'react-router-dom'
-import SearchBar from "../components/SearchBar"
+import React from "react";
+import { Form } from "react-router-dom";
+import SearchBar from "../components/SearchBar";
 
 const Home = () => {
   return (
-    <div >
-    <SearchBar/>
-    </div>
-  )
-}
+    <main>      
+      <SearchBar />
+    </main>
+  );
+};
 
-export default Home
+export default Home;

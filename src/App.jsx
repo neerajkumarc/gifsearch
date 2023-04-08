@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 function App() {
   return (
     <BrowserRouter>
-      <h1 className="text-red-500 text-4xl text-center font-bold mt-4">
+      <h1 className="text-4xl text-center font-bold mt-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-800 ">
         GIF NOT JIF
       </h1>
       <Routes>

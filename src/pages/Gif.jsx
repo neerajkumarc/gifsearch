@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import fileDownload from "js-file-download";
 import PageNotFound from "./PageNotFound";
+import { TailSpin } from "react-loader-spinner";
 
 const Gif = () => {
   const { id } = useParams();
@@ -38,7 +39,18 @@ const Gif = () => {
       ) : (
         <div>
           {loading ? (
-            <p className="text-center text-2xl text-white">Loading...</p>
+            <div className="flex items-center justify-center">
+            <TailSpin
+           height="80"
+           width="80"
+           color="#ff0000"
+           ariaLabel="tail-spin-loading"
+           radius="1"
+           wrapperStyle={{}}
+           wrapperClass=""
+           visible={true}
+         />
+           </div>
           ) : (
             <div className="max-w-2xl mx-auto m-4 text-white flex flex-col items-center gap-4">
               <p className="text-bold text-2xl text-center">{gif.title}</p>

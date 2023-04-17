@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
-import PageNotFound from "./PageNotFound"
+import { TailSpin } from "react-loader-spinner";
 
 const Home = () => {
   const { searchText } = useParams();
@@ -41,7 +41,18 @@ const Home = () => {
     <div>
       <SearchBar/>
    {loading ? (
-        <p className="text-xl text-center">Loading...</p>
+       <div className="flex items-center justify-center">
+        <TailSpin
+       height="80"
+       width="80"
+       color="#ff0000"
+       ariaLabel="tail-spin-loading"
+       radius="1"
+       wrapperStyle={{}}
+       wrapperClass=""
+       visible={true}
+     />
+       </div>
       ) : (
         <div className="grid grid-cols-3 grid-flow-dense max-w-xl mx-auto p-4">
           {gifs.map((gif) => {

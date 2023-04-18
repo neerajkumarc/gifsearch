@@ -7,11 +7,10 @@ import { TailSpin } from "react-loader-spinner";
 
 const Gif = () => {
   const { id } = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [gif, setGif] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [status, setStatus] = useState()
-  const [notFound, setNotFound] = useState(false);
+  const [status, setStatus] = useState();
   const API_KEY = "1mwpV1pXzxX9PWodaVTxBGCXpAsda5up";
 
   useEffect(() => {
@@ -21,7 +20,7 @@ const Gif = () => {
         setGif(data.data);
         setLoading(false);
         setStatus(data.meta.status);
-      })
+      });
   }, []);
   const handleDownload = (url, filename) => {
     axios
@@ -40,17 +39,17 @@ const Gif = () => {
         <div>
           {loading ? (
             <div className="flex items-center justify-center">
-            <TailSpin
-           height="80"
-           width="80"
-           color="#ff0000"
-           ariaLabel="tail-spin-loading"
-           radius="1"
-           wrapperStyle={{}}
-           wrapperClass=""
-           visible={true}
-         />
-           </div>
+              <TailSpin
+                height="80"
+                width="80"
+                color="#ff0000"
+                ariaLabel="tail-spin-loading"
+                radius="1"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              />
+            </div>
           ) : (
             <div className="max-w-2xl mx-auto m-4 text-white flex flex-col items-center gap-4">
               <p className="text-bold text-2xl text-center">{gif.title}</p>
@@ -74,7 +73,7 @@ const Gif = () => {
                 <button
                   className="bg-red-500 px-4 p-2 w-36 font-bold rounded"
                   onClick={() => {
-                   navigate(-1)
+                    navigate(-1);
                   }}
                 >
                   Go Back

@@ -10,6 +10,7 @@ function App() {
       <h1 className="text-4xl text-center font-bold mt-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-800 ">
         GIF NOT JIF
       </h1>
+      <p className="text-center m-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-100 ">Discover endless fun with amazing animated gif collection!</p>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search/:searchText" element={<Search />} />

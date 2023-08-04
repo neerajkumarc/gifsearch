@@ -63,7 +63,7 @@ const Home = () => {
                 onClick={() => handleClick(gif.id)}
               >
                 <img
-                  className="w-40 p-1 h-40 cursor-pointer"
+                  className="w-40 p-1 h-40 cursor-pointer rounded-2xl"
                   src={gif.images.preview_gif.url}
                   loading="lazy"
                   alt="gif"

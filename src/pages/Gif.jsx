@@ -42,7 +42,7 @@ const Gif = () => {
               <TailSpin
                 height="80"
                 width="80"
-                color="#ff0000"
+                color="#c87218"
                 ariaLabel="tail-spin-loading"
                 radius="1"
                 wrapperStyle={{}}

@@ -19,7 +19,6 @@ const Home = () => {
       .then((response) => response.json())
       .then((data) => {
         setGifs(data.data);
-        console.log(data.data);
       })
       .then(() => {
         setLoading(false);

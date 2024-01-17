@@ -9,7 +9,6 @@ const Home = () => {
   const navigate = useNavigate();
   const [gifs, setGifs] = useState([]);
   const [loading, setLoading] = useState(null);
-  const [notFound , setNotFound] = useState(false)
   function fetchGifs() {
     setLoading(true);
     const API_KEY = "1mwpV1pXzxX9PWodaVTxBGCXpAsda5up";
@@ -22,9 +21,6 @@ const Home = () => {
       })
       .then(() => {
         setLoading(false);
-        if(gifs.length==0){
-          setNotFound(true)
-        }
       });
   }
 

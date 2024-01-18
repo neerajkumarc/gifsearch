@@ -18,10 +18,8 @@ const Home = () => {
       .then((response) => response.json())
       .then((data) => {
         setGifs(data.data);
+        setLoading(false)
       })
-      .then(() => {
-        setLoading(false);
-      });
   }
 
   useEffect(() => {
@@ -34,20 +32,23 @@ const Home = () => {
 
   return (
     <div>
-      <SearchBar/>
-   {loading ? (
-       <div className="flex items-center justify-center">
-        <TailSpin
-       height="80"
-       width="80"
-       color="#c87218"
-       ariaLabel="tail-spin-loading"
-       radius="1"
-       wrapperStyle={{}}
-       wrapperClass=""
-       visible={true}
-     />
-       </div>
+      <SearchBar />
+      {gifs.length == 0 && <div className="flex items-center justify-center">
+       <p>No GIFS found for {searchText}</p>
+      </div>}
+      {loading ? (
+        <div className="flex items-center justify-center">
+          <TailSpin
+            height="80"
+            width="80"
+            color="#c87218"
+            ariaLabel="tail-spin-loading"
+            radius="1"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
+        </div>
       ) : (
         <div className="grid grid-cols-3 grid-flow-dense max-w-xl mx-auto p-4">
           {gifs.map((gif) => {
